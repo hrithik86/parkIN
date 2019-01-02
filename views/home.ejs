@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parkin</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            .container{
+                text-align: center;
+                font-family: 'Lucida Sans';             
+                
+            }
+            body{
+                background: linear-gradient(to right, rgb(60, 190, 233) , rgb(81, 228, 118));
+            }
+        </style>
+    </head>
+<body>
+        <div class="container" style="width:30%; margin:125px auto;">
+                <h1>ParkIn</h1>
+                <p>ParkIn is completely independent Website/App for assisting users in getting free parking spaces. Coming Soon.</p>    
+            
+            <form method="POST" action="/parkin">        
+                <div class="form-group">
+                    <input class="form-control" type="email" placeholder="email" name="email">
+                </div>
+                
+                <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">submit</button>    
+                    </div>
+            </form>
+        </div>
+</body>
+</html>
