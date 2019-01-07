@@ -1,33 +1,203 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Parkin</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <style>
-            .container{
-                text-align: center;
-                font-family: 'Lucida Sans';             
-                
-            }
-            body{
-                background: linear-gradient(to right, rgb(60, 190, 233) , rgb(81, 228, 118));
-            }
-        </style>
-    </head>
-<body>
-        <div class="container" style="width:30%; margin:125px auto;">
-                <h1>ParkIn</h1>
-                <p>ParkIn is completely independent Website/App for assisting users in getting free parking spaces. Coming Soon.</p>    
-            
-            <form method="POST" action="/parkin">        
-                <div class="form-group">
-                    <input class="form-control" type="email" placeholder="email" name="email">
-                </div>
-                
-                <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block">submit</button>    
-                    </div>
-            </form>
+<% include ./partials/header.ejs %>
+<style>
+    body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(to right,#fffbd5,#e7bec7);
+}
+.container2{
+    text-align: center;
+    color:black;
+    font-family: sans-serif;
+    height:200px;
+    /* background: #e84118; */
+    margin-bottom: 250px;
+    margin-top:150px;
+
+}
+.container1{
+    height:700px;
+    text-align: center;
+    margin-top:50px;
+}
+.container2 {
+  padding-top: 60px;
+}
+
+.main-container {
+  background: #75c292;
+  position: relative;
+}
+
+.main-container:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -36px;
+  width: 100%;
+  height: 200px;
+  background: #00bcd4;
+  -webkit-transform: skewY(2.5deg);
+  -moz-transform: skewY(2.5deg);
+  -ms-transform: skewY(2.5deg);
+  -o-transform: skewY(2.5deg);
+  transform: skewY(2.5deg);
+  
+}
+
+section {
+  margin: 10px auto;
+  padding: 0 20px;
+  padding-bottom: 10px;
+  position: relative;
+  max-width: 600px;
+}
+input{
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background: inherit;
+    outline: none;
+    font-size: 18px;
+    width:170px;
+    margin-top: 10px;
+}
+.up{
+    color:aliceblue;
+}
+h3{
+    font-weight: bold;
+    color: aliceblue;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+h1{
+    font-weight: bold;
+    font-size:90px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    text-align: center;
+   
+} 
+h1:hover{
+    transform: scale(1.1,1.1);
+    color:rgb(121, 105, 105);
+    transition: 0.4s all;
+}
+button{
+    outline: none;
+    background: inherit;
+    border: none;
+    font-size: 18px;
+    color: aliceblue;
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    
+}
+img{
+    width:600px;
+    height:350px;
+    
+}
+label{
+    margin-top:20%;
+    font-size: 90px;
+    color: rgb(105, 103, 103);
+}
+
+.feature{
+    color:blue;
+    font-weight: bold;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.content{
+    color:rgb(70, 70, 250);
+    font-size:25px;
+    font-family: "Indie Flower";
+    font-weight: bolder;
+    text-align: center;
+}
+</style>
+
+<div class="container">
+    <%if (error && error.length>0){%>
+        <div class="alert alert-danger" role="alert">
+            <%=error%>
         </div>
-</body>
-</html>
+    <%}%>
+    <%if (success && success.length>0){%>
+    <div class="alert alert-success" role="alert">
+        <%=success%>
+    </div>
+    <%}%>
+</div>
+<h1>ParkIN</h1>
+<div class="container1">
+<div class="row">
+    <div class="col-lg-6">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Xq5ZAPfWVPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col-lg-6">
+            <form action="\data" method="POST">
+                    <label>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" name="location">
+                    </label>
+            </form>
+    </div>
+</div>
+    
+
+
+
+
+</div>
+<div class="container2">
+    <main class="main">
+        <div class="main-container">
+            <section>
+                    <form action="/upload" method="POST">
+                        <h3>Inside the hood</h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                    <input class="up" type="text" name="location" placeholder="Enter location">
+                            </div>
+                            <div class="col-lg-4">
+                                    <input class="up" type="text" name="image" placeholder="Enter image url">
+                            </div>
+                            <div class="col-lg-4">
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                    </form>
+            </section>
+        </div>
+    </main>    
+</div>
+<div>
+<h2 class="feature">Salient Features</h2>
+    <div class="row content">
+        <div class="col-lg-6">
+            <h4 style="font-weight: bold">1. Parking space finder and allotment</h4>
+            <img style="width:300px; height:270px;" src="https://i.postimg.cc/hGhFQt6J/parking-space.jpg">
+        </div>
+        <div class="col-lg-6">
+            <h4 style="font-weight: bold">2. Personalised Wallet</h4>
+            <img style="width:300px; height:270px;" src="https://i.postimg.cc/wMjDgn7d/wallet.jpg">
+        </div>
+        <div class="col-lg-6" style="margin-left:25%;">
+            <h4 style="font-weight: bold">3. Parking space rating</h4>
+            <img style="width:300px; height:270px;" src="https://i.postimg.cc/rFb52nTv/rating.png">  
+        </div>
+    </div>    
+        
+        
+        
+       
+      
+</p>
+</div>
+
+<% include ./partials/footer.ejs %>

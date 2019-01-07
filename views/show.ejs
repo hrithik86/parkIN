@@ -1,0 +1,54 @@
+<% include ./partials/header.ejs %>
+<style>
+ .container{
+    text-align: center;
+    color: black;
+    font-family: 'Viga', sans-serif;
+    margin-top: 30px;
+}
+body{
+    margin:0;
+    padding:0;
+    
+    /* background: linear-gradient(to right,rgb(207, 118, 118),rgb(223, 95, 11)); */
+}
+img{
+    width: 500px;
+    height: 350px;
+    border-radius: 5%;
+}
+hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1em;
+    padding: 0 0.25em;
+    background: white;
+}
+#go{
+color:black;
+
+}
+#go:hover{
+    color:red;
+}
+
+</style>
+<div class="container">
+    <img src="<%=image%>">
+    <h1>The NUMBER PLATE is:</h1>
+    <hr>
+    <h2><%=result.info.ocr.adv_ocr.data[0].textAnnotations[0].description%></h2>
+    <hr>
+    <a id="go" href="/">Go Back</a> 
+</div>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,20 @@
+<% include ./partials/header.ejs %>
+<style>
+body{
+    font-family: 'Viga', sans-serif;
+}
+#another{
+    color:grey;
+
+}
+#another:hover{
+    color:black;
+}
+</style>
+<div class="container">
+    <h3>There are <%=c%> number of vehicles in <%=location%></h3>
+    <a id="another" href="/">Try another location</a>
+</div>
+
+
+<% include ./partials/footer.ejs %>
