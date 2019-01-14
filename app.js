@@ -12,11 +12,11 @@ var express=require("express"),
     cors = require('cors');
 
 mongoose.connect("mongodb://team_evol:evolution12345@ds117101.mlab.com:17101/parkin1");    
-// mongoose.connect("mongodb://team_evol:evolution12345@ds247674.mlab.com:47674/parkin");
+
 // mongoose.connect("mongodb://localhost/park");
 
 var UserSchema=new mongoose.Schema({
-    userename:String,
+    username:String,
     password:String
 });
 UserSchema.plugin(passportLocalMongoose);
@@ -67,9 +67,9 @@ function isLoggedIn(req,res,next){
     });
 
     cloudinary.config({
-        cloud_name: 'hrithik',
-        api_key: '135272241391855',
-        api_secret: 'ngZCJWapvrrYd0W_zxkE_qKfquw'
+        cloud_name: 'dfoxoukij',
+        api_key: '575298871488187',
+        api_secret: 'j98oer2BcNwPPLi-QyUpE9uD1t4'
     });
 
     app.post('/upload', multipartMiddleware, function(req, res) {
