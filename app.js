@@ -1,15 +1,16 @@
-var express=require("express"),
-    app=express(),
-    flash=require("connect-flash"),
-    bodyParser=require("body-parser"),
-    mongoose=require("mongoose"),
-    passportLocalMongoose=require("passport-local-mongoose");
-    methodOverride=require("method-override"),
-    passport=require("passport"),
-    LocalStrategy=require("passport-local"),
-    multipart = require('connect-multiparty'),
-    cloudinary = require('cloudinary'),
-    cors = require('cors');
+const   express=require("express"),
+        app=express(),
+        flash=require("connect-flash"),
+        bodyParser=require("body-parser"),
+        mongoose=require("mongoose"),
+        passportLocalMongoose=require("passport-local-mongoose");
+        methodOverride=require("method-override"),
+        passport=require("passport"),
+        LocalStrategy=require("passport-local"),
+        multipart = require('connect-multiparty'),
+        cloudinary = require('cloudinary'),
+        cors = require('cors');
+        keys=require("./config/keys");
 
 mongoose.connect("mongodb://team_evol:evolution12345@ds117101.mlab.com:17101/parkin1");    
 
@@ -67,9 +68,9 @@ function isLoggedIn(req,res,next){
     });
 
     cloudinary.config({
-        cloud_name: 'dfoxoukij',
-        api_key: '575298871488187',
-        api_secret: 'j98oer2BcNwPPLi-QyUpE9uD1t4'
+        cloud_name: keys.cn,
+        api_key: keys.api_key,
+        api_secret: keys.api_sec
     });
 
     app.post('/upload', multipartMiddleware, function(req, res) {
@@ -152,10 +153,6 @@ app.get("/logout",function(req,res){
 
 
 // ======================================================================
-
-
-
-
 
 
 app.listen(process.env.PORT,function(){
