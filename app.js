@@ -12,7 +12,7 @@ const   express=require("express"),
         cors = require('cors');
         keys=require("./config/keys");
 
-mongoose.connect("mongodb://team_evol:evolution12345@ds117101.mlab.com:17101/parkin1");    
+mongoose.connect(keys.mongo_key);    
 
 // mongoose.connect("mongodb://localhost/park");
 
